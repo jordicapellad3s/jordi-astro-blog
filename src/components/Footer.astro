@@ -1,0 +1,25 @@
+<footer class="mt-20">
+  <div class="flex gap-4 justify-center p-5 text-neutral-50 text-xs">
+    <p class="">
+      2023 © Jordi Capellades
+    </p>
+    <div class="clock " />
+  </div>
+</footer>
+
+<script>
+  const clock = document.querySelector('.clock');
+  const tick = () => {
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    const s = now.getSeconds();
+    const html = `
+      <span>${h}</span> :
+      <span>${m}</span> :
+      <span>${s}</span>
+    `;
+    clock.innerHTML = html;
+  };
+  setInterval(tick, 1000);
+</script>

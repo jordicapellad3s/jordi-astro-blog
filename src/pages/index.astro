@@ -1,23 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BioSection from "../components/BioSection.astro";
+import Date from "../components/Date";
+import ExperienceSection from "../components/ExperienceSection.astro";
+import WrittingSection from "../components/WrittingSection.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Jordi Capellades">
-<main class="max-w-2xl mx-auto flex justify-center">
-	<section class="flex gap-6 border-2 border-transparent hover:border-2 rounded-lg hover:border-[#85301b] text-neutral-50 p-5 hover:bg-[#292111] transition-all duration-500">
-		<img class="w-28 h-28 rounded-full ml-4" src="/images/portrait.jpeg" alt="Jordi Capellades">
-		<div>
-			<h1 class="text-xl font-medium">
-			Jordi Capellades
-		</h1>
-		<p class="text-sm text-neutral-50/30">
-			Junior Frontend
-		</p>
-		<p class="mt-4">
-			Constantly learning and creating · Passion for coding and exploring design
-
-		</p>
-	</div>
-	</section>
-</main>
+  <main class="max-w-2xl mx-auto flex flex-col justify-center">
+    <BioSection />
+    <WrittingSection />
+    <ExperienceSection />
+  </main>
 </Layout>

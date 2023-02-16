@@ -1,0 +1,54 @@
+---
+import Date from "../components/Date";
+const experiences = [
+  {
+    company: "Itcubation",
+    position: "Junior Frontend",
+    from: "2023",
+    to: "",
+  },
+  {
+    company: "FHIOS Smart Knowledge",
+    position: "Drupal & Web developer",
+    from: "2020",
+    to: "2022",
+  },
+  {
+    company: "Edittec",
+    position: "Drupal developer",
+    from: "2018",
+    to: "2020",
+  },
+];
+---
+
+<section
+  class="text-neutral-50 m-4 mt-8 flex flex-col gap-2 border border-neutral-50/10 p-4 rounded-lg"
+>
+  <h1 class="font-medium">Experience</h1>
+  <p class="text-neutral-50/50 text-sm">
+    Here you can find my experience in different companies and projects.
+  </p>
+
+  {
+    experiences.map((experience) => {
+      return (
+        <div class="flex flex-col p-4">
+          <div class="flex gap-2 items-center">
+            <p class="font-medium">{experience.company}</p>
+            <div class="flex items-center text-neutral-50/50">
+              <Date dateString={experience.from} formater="yyyy" />
+              {experience.to === "" ? "" : " - "}
+              {experience.to === "" ? (
+                ""
+              ) : (
+                <Date dateString={experience.to} formater="yyyy" />
+              )}
+            </div>
+          </div>
+          <p class="text-sm text-neutral-50/50">{experience.position}</p>
+        </div>
+      );
+    })
+  }
+</section>
