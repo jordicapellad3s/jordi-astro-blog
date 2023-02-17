@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlogItem from "../components/BlogItem.astro";
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
+const pageTitle = "Blog";
+---
+
+<Layout title={pageTitle}>
+  <a
+    href="/"
+    class="hover:translate-x-1 text-neutral-50 mb-6 opacity-50 hover:opacity-100 transition duration-500"
+    >← <span class="">Back</span></a
+  >
+  <h1 class="text-neutral-50 text-4xl font-bold">Blog</h1>
+  <ul class="mt-4">
+    {allPosts.map((post) => <BlogItem post={post} />)}
+  </ul>
+</Layout>

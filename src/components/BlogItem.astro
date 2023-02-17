@@ -1,0 +1,21 @@
+---
+import Date from "./Date";
+import { ArrowUpRightIcon } from "./Icons";
+const { post } = Astro.props;
+---
+
+<a href={post.url} class="group">
+  <li
+    class="flex justify-between list-none rounded-lg p-2 hover:bg-neutral-50/5 transition-all duration-75"
+  >
+    <div class="flex flex-col">
+      <p class="font-medium text-neutral-50">{post.frontmatter.title}</p>
+      <Date dateString={post.frontmatter.pubDate} formater="LLL d, yyyy" />
+    </div>
+    <span
+      class="opacity-0 group-hover:opacity-100 text-neutral-50 transition-all duration-500"
+    >
+      <ArrowUpRightIcon />
+    </span>
+  </li>
+</a>

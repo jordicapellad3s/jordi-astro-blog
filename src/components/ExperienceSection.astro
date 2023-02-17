@@ -23,7 +23,7 @@ const experiences = [
 ---
 
 <section
-  class="text-neutral-50 m-4 mt-8 flex flex-col border border-neutral-50/10 p-4 rounded-lg"
+  class="text-neutral-50 m-4 mt-8 ease-in-out duration-700 hover:shadow-2xl hover:shadow-neutral-100/5 flex flex-col border border-neutral-50/10 p-4 rounded-lg"
 >
   <h1 class="font-medium">Experience</h1>
   <p class="text-neutral-50/50 text-sm mb-4">
@@ -35,21 +35,19 @@ const experiences = [
       return (
         <div class="flex flex-col p-2">
           <div class="flex gap-2 items-center">
-            <p class="font-medium">{experience.company}</p>
+            <p class="font-medium">
+              {experience.company} -{" "}
+              <span class="opacity-50 text-sm">{experience.position}</span>{" "}
+            </p>
           </div>
-          <div class="flex gap-2 items-center text-neutral-50/50">
-            <p class="text-sm text-neutral-50/50">{experience.position}</p>
-            <div>
-              [
-              <Date dateString={experience.from} formater="yyyy" />
-              {experience.to === "" ? "" : " - "}
-              {experience.to === "" ? (
-                ""
-              ) : (
-                <Date dateString={experience.to} formater="yyyy" />
-              )}
-              ]
-            </div>
+          <div>
+            <Date dateString={experience.from} formater="yyyy" />
+            {experience.to === "" ? "" : " - "}
+            {experience.to === "" ? (
+              ""
+            ) : (
+              <Date dateString={experience.to} formater="yyyy" />
+            )}
           </div>
         </div>
       );
