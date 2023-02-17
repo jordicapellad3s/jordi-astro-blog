@@ -1,14 +1,18 @@
+---
+const year = new Date().getFullYear();
+---
+
 <footer class="mt-20">
   <div class="flex gap-4 justify-center p-5 text-neutral-50 text-xs">
     <p class="">
-      2023 © Jordi Capellades
+      {year} © Jordi Capellades
     </p>
-    <div class="clock " />
+    <div class="clock"></div>
   </div>
 </footer>
 
 <script>
-  const clock = document.querySelector('.clock');
+  const clock = document.querySelector(".clock");
   const tick = () => {
     const now = new Date();
     const h = now.getHours();

@@ -1,0 +1,59 @@
+---
+import { ArrowUpRightIcon } from "./Icons";
+
+const resources = [
+  {
+    title: "Warp",
+    description: "Terminal of choice",
+    url: "https://www.warp.dev/",
+    logo: "/images/logos/warp.webp",
+  },
+  {
+    title: "Spotify",
+    description: "Music player favorite",
+    url: "https://open.spotify.com/collection/playlists",
+    logo: "/images/logos/spotify.webp",
+  },
+  {
+    title: "Figma",
+    description: "Design tool of choice",
+    url: "https://figma.com",
+    logo: "/images/logos/figma.webp",
+  },
+  {
+    title: "Vercel",
+    description: "Using to develop previw and ship",
+    url: "https://vercel.com",
+    logo: "/images/logos/vercel.webp",
+  },
+];
+---
+
+<section
+  class="text-neutral-50 m-4 mt-8 flex flex-col gap-2 border border-neutral-50/10 p-4 rounded-lg"
+>
+  <h1 class="font-medium">Resources</h1>
+  <p class="text-neutral-50/50 text-sm">
+    A list of resources that I have found useful in my journey as a developer.
+  </p>
+  {
+    resources.map((resource) => (
+      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+        <div class=" group flex justify-between p-2 transition-all duration-200 hover:bg-neutral-50/5 rounded-lg">
+          <div class="flex gap-4 items-center">
+            <div>
+              <img src={resource.logo} alt={resource.title} class="w-8 h-8" />
+            </div>
+            <div>
+              <h1 class="font-medium">{resource.title}</h1>
+              <p class="text-neutral-50/50 text-sm">{resource.description}</p>
+            </div>
+          </div>
+          <span class="opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <ArrowUpRightIcon />
+          </span>
+        </div>
+      </a>
+    ))
+  }
+</section>
